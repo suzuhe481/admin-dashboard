@@ -1,0 +1,142 @@
+/* For testing */
+/* * {
+  border: 1px solid black;
+} */
+
+
+/* Layout stylings */
+#main-container {
+  display               : grid;
+  grid-template-columns : 1fr 4fr;
+  grid-template-rows    : 1fr 5fr;
+}
+
+
+
+/* Header stylings */
+#header {
+  grid-column : 2 / 3;
+  grid-row    : 1 / 2;
+
+  display               : grid;
+  grid-template-rows    : 1fr 1fr;
+  grid-template-columns : 3fr 1fr;
+
+  height  : 15vh;
+}
+
+#header .header-icon {
+  height  : 2vh;
+  width   : auto;
+}
+
+/* #header-search stylings */
+#header-search {
+  display         : flex;
+  justify-content : flex-start;
+  align-items     : center;
+}
+
+
+#header-search > input {
+  background-color : rgb(226,232,240);
+
+  width         : 90%;
+  border-radius : 10px;
+  border        : none;
+}
+
+/* header-welcome stylings */
+#header-welcome {
+  display         : flex;
+  justify-content : flex-start;
+  align-items     : center;
+
+  gap             : 10px;
+}
+
+#header-welcome > img {
+  border        : 2px solid black;
+  border-radius : 1000px;
+
+  height        : 5vh;
+  width         : auto;
+}
+
+#header-welcome p {
+  margin  : 0;
+}
+
+/* Left side margin for search bar and welcome message */
+#header-search,
+#header-welcome {
+  margin-left : 15px;
+}
+
+/* header-username stylings */
+#header-username {
+  display         : flex;
+  justify-content : flex-end;
+  align-items     : center;
+}
+
+#header-username > * {
+  padding-left  : 10px;
+}
+
+#header-profile,
+#header-notification {
+  height  : 4vh;
+  width   : auto;
+}
+
+/* header-actions stylings */
+#header-actions {
+  display         : flex;
+  justify-content : space-between;
+  align-items     : center;
+}
+
+#header-actions > button {
+  background-color  : rgb(25,146,212);
+  color             : white;
+  border            : none;
+  border-radius     : 20px;
+  height            : 50%;
+  font-size         : 1em;
+
+  padding     : 5px 25px;
+  margin-left : 10px;
+}
+
+#header-actions > button:active {
+  background-color:  rgb(18, 97, 139);
+}
+
+/* Right side margins for username and actions */
+#header-username,
+#header-actions {
+  margin-right  : 15px;
+}
+
+/* END of header stylings */
+
+
+
+/* sidebar stylings */
+#sidebar {
+  grid-row    : 1 / -1;
+  grid-column : 1 / 1;
+
+  background-color  : rgb(25,146,212);
+}
+
+/* END of sidebar stylings */
+
+/* content stylings */
+#content {
+  background-color  : rgb(226,232,240);
+}
+
+
+/* END of content stylings */
