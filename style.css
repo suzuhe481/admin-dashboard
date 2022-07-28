@@ -4,34 +4,133 @@
 } */
 
 
-/* Layout stylings */
+
+/* Page layout stylings */
+body {
+  margin  : 0;
+}
+
 #main-container {
   display               : grid;
-  grid-template-columns : 1fr 4fr;
-  grid-template-rows    : 1fr 5fr;
+  grid-template-columns : 200px auto;
 
   font-family   :system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
   font-weight   : bold;
+
+  height  : 100vh;
+  width   : 100%;
 }
+
+#main-area {
+  grid-column: 2 / -1;
+
+  display             : grid;
+  grid-template-rows  : auto 1fr;
+}
+/* END of page layout stylings */
+
+
+/* sidebar stylings */
+#sidebar-container {
+  background-color  : rgb(25,146,212);
+
+  height  : 100%;
+}
+
+#sidebar {
+  display             : grid;
+  grid-template-rows  : 1fr 1fr 1fr;
+  row-gap             : 20px;
+
+  height  : 50%;
+}
+
+#sidebar-home {
+  grid-row  : 1 / 2;
+
+  display               : grid;
+  grid-template-columns : 1fr 5fr;
+  align-items           : center;
+
+  margin-top  : 10px;
+}
+
+#sidebar-page-options {
+  grid-row  : 2 / 3;
+
+  display               : grid;
+  grid-template-columns : 1fr 5fr;
+
+  align-items : center;
+}
+
+#sidebar-support-options {
+  grid-row  : 3 / 4;
+
+  display               : grid;
+  grid-template-columns : 1fr 5fr;
+
+  align-items           : center;
+}
+
+/* All svg images in sidebar */
+#sidebar-main-icon,
+.sidebar-icon {
+  fill    : white;
+  cursor  : pointer;
+}
+
+/* Only svg image of logo in sidebar */
+#sidebar-main-icon {
+  height    : 2em;
+  width     : auto;
+
+  /* transform : scale(1.4); */
+}
+
+/* All svg images except logo in sidebar */
+.sidebar-icon {
+  height  : 1.4em;
+  width   : auto;
+}
+
+#sidebar-home,
+#sidebar-page-options,
+#sidebar-support-options {
+  padding-left  : 15%;
+  column-gap    : 10%;
+}
+
+/* All text in sidebar */
+#sidebar-container p {
+  font-size : 90%;
+  color     : white;
+
+  cursor    : pointer;
+}
+/* END of sidebar stylings */
 
 
 
 /* Header stylings */
 #header {
-  grid-column : 2 / 3;
-  grid-row    : 1 / 2;
+  grid-column : 2 / -1;
 
   display               : grid;
   grid-template-rows    : 1fr 1fr;
   grid-template-columns : 3fr 1fr;
 
-  height  : 15vh;
+  padding : 15px 35px;
 }
 
-#header .header-icon {
-  height  : 4vh;
+/* Magnifying glass icon */
+#search-icon {
+  height  : 1.7em;
   width   : auto;
+
+  cursor  : pointer;
 }
+
 
 /* #header-search stylings */
 #header-search {
@@ -40,42 +139,15 @@
   align-items     : center;
 }
 
-
-#header-search > input {
-  background-color : rgb(226,232,240);
+#search-bar {
+  background-color  : rgb(226,232,240);
+  font-size         : 12pt;
 
   width         : 90%;
-  height        : 3vh;
+  height        : 2em;
   border-radius : 100px;
   border        : none;
-}
-
-/* header-welcome stylings */
-#header-welcome {
-  display         : flex;
-  justify-content : flex-start;
-  align-items     : center;
-
-  gap             : 10px;
-}
-
-#header-welcome > img {
-  border        : 2px solid black;
-  border-radius : 1000px;
-
-  height        : 5vh;
-  width         : auto;
-}
-
-#header-welcome p {
-  margin    : 0;
-  font-size : 1.5em;
-}
-
-/* Left side margin for search bar and welcome message */
-#header-search,
-#header-welcome {
-  margin-left : 2vw;
+  padding-left  : 15px;
 }
 
 /* header-username stylings */
@@ -90,6 +162,8 @@
   height  : 4vh;
   width   : auto;
   margin  : 0 10px;
+
+  cursor  : pointer;
 }
 
 #header-username {
@@ -101,6 +175,31 @@
   background-color  : rgb(156, 156, 156);
   border-radius     : 1000px;
 }
+
+/* header-welcome stylings */
+#header-welcome {
+  display         : flex;
+  justify-content : flex-start;
+  align-items     : center;
+
+  gap             : 10px;
+}
+
+#profile-picture {
+  border        : 2px solid black;
+  border-radius : 1000px;
+
+  height        : 5vh;
+  width         : auto;
+}
+
+/* Welcome message text */
+#header-welcome p {
+  margin    : 0;
+  font-size : 1.5em;
+}
+
+
 
 /* header-actions stylings */
 #header-actions {
@@ -117,38 +216,20 @@
   height            : 50%;
   font-size         : 1em;
 
-  padding     : 5px 25px;
-  margin-left : 10px;
+  padding           : 5px 35px;
+  margin-left       : 10px;
+
+  cursor  : pointer;
 }
 
 #header-actions > button:active {
   background-color  :  rgb(18, 97, 139);
 }
-
-/* Right side margins for username and actions */
-#header-username,
-#header-actions {
-  margin-right  : 2vw;
-}
-
 /* END of header stylings */
 
 
-
-/* sidebar stylings */
-#sidebar {
-  grid-row    : 1 / -1;
-  grid-column : 1 / 1;
-
-  background-color  : rgb(25,146,212);
-}
-
-/* END of sidebar stylings */
-
 /* content stylings */
-#content {
+#main-content {
   background-color  : rgb(226,232,240);
 }
-
-
 /* END of content stylings */
